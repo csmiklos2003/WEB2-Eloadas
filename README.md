@@ -15,7 +15,7 @@
 
 3.	Főoldal menü: Az első oldalon mutassa be a céget egy látványos weboldalon		(2 p)
 
-4.	Adatbázis menü: a választott adatbázisból jelenít meg adatokat				(4 p)
+4.	Adatbázis menü: a választott adatbázisból jelenít meg adatokat				(4 p)  ✅
     Ehhez 3 tábla adatait használja fel az adatbázisból.
     Használjon ORM-et (Object-Relational Mapping) az adatbázis műveletekhez
     Használjon Migrációt és Seeding-et az adatbázishoz.
@@ -48,15 +48,17 @@
     (Kötelező elem! A működés ez alapján lesz javítva)	
     Bármelyik tárhelyszolgáltatót használhatja.
 
-11.	Használják a GitHub (github.com) verziókövető rendszert. 
+11.	Használják a GitHub (github.com) verziókövető rendszert. ✅
     (Kötelező elem! A forrás ez alapján lesz javítva) 
     Ne csak a kész alkalmazást töltsék fel egy lépésben, hanem a részállapotokat is még legalább 5 lépésben személyenként.
     Tegye nyilvánossá a GitHub fiókot, különben nem lehet értékelni a kódot.
     A GIT-en saját nevet válasszanak, ami alapján be lehet azonosítani, hogy ki mit töltött fel.
 
-12.	A GitHub-on a projektmunka módszert alkalmazzák: látszódjék, 			(3 p)
+12.	A GitHub-on a projektmunka módszert alkalmazzák: látszódjék, 			(3 p) ✅
     hogy a csoport tagjai melyik részt készítették el.
 
 13.	Készítsen egy legalább 15 oldalas dokumentációt képernyőképekkel (Kötelező elem!), 	
     amiben bemutatja alkalmazását és leírja, hogy az előző pontok feladatait hogyan valósította meg. Fontos, hogy ez utóbbit leírja a dokumentációban, mert a     feladat ez alapján lesz javítva. A dokumentációban adja meg a weboldal és a GitHub URL címét is és a belépési adatokat az FTP-hez és az adatbázishoz.
     Fájlnév formátum: Név-NeptunKód.pdf	pl. KovacsFerenc-ABC123.pdf
+
+Eddigi várható pontszám: 12 (17 ha korai beadás)
