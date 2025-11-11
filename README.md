@@ -20,6 +20,8 @@
     Használjon ORM-et (Object-Relational Mapping) az adatbázis műveletekhez
     Használjon Migrációt és Seeding-et az adatbázishoz.
 
+    protected $connection = 'f1'; //kell ha valami az adatbázist használja
+
 5.	Kapcsolat menü: legyen egy kapcsolat űrlap, amelynek segítségével üzenetet 		(3 p)
     lehet küldeni az oldal tulajdonosa számára. 
     Használjon szerver oldali validációt az űrlaphoz.
