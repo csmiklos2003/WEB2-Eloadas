@@ -36,7 +36,7 @@
     Készítsen egy oldalt diagrammal az adatbázis adatai alapján
     Használja a https://www.chartjs.org/ alkalmazást a diagramhoz.   
 
-8.	CRUD menü: Az oldalon valósítson meg egy CRUD (Create, Read, Update, Delete) 	(4 p)
+8.	CRUD menü: Az oldalon valósítson meg egy CRUD (Create, Read, Update, Delete) 	(4 p) ✅
     alkalmazást a választott adatbázis egyik táblájához. 
     CRUD funkciók: tábla megjelenítése; új rekord felvitele; adott rekord módosítása;
     adott rekord törlése.
@@ -61,4 +61,4 @@
     amiben bemutatja alkalmazását és leírja, hogy az előző pontok feladatait hogyan valósította meg. Fontos, hogy ez utóbbit leírja a dokumentációban, mert a     feladat ez alapján lesz javítva. A dokumentációban adja meg a weboldal és a GitHub URL címét is és a belépési adatokat az FTP-hez és az adatbázishoz.
     Fájlnév formátum: Név-NeptunKód.pdf	pl. KovacsFerenc-ABC123.pdf
 
-Eddigi várható pontszám: 12 (17 ha korai beadás)
+Eddigi várható pontszám: 16 (21 ha korai beadás)

@@ -20,8 +20,14 @@
                 </div>
 
                  <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('adatbazis')" :active="request()->routeIs('adatbazis')">
+                    <x-nav-link :href="route('adatbazis')" :active="request()->routeIs('adatbazis.*')">
                         {{ __('Adatbázis') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('crud.index')" :active="request()->routeIs('crud.*')">
+                        {{ __('CRUD menü') }}
                     </x-nav-link>
                 </div>
             </div>

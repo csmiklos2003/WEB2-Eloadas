@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdatbazisController;
+use App\Http\Controllers\PilotaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,5 +23,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/adatbazis', [AdatbazisController::class, 'index'])->name('adatbazis');
+
+Route::resource('crud', PilotaController::class);
 
 require __DIR__.'/auth.php';

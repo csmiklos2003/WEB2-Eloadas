@@ -9,6 +9,7 @@ class Pilota extends Model
     protected $connection = 'f1'; // fontos, külön adatbázis
     protected $table = 'pilota';
     protected $fillable = ['nev', 'nem', 'szuletett', 'nemzetiseg'];
+    public $timestamps = false;
 
     public function eredmenyek()
     {
