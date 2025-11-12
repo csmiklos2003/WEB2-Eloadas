@@ -60,6 +60,7 @@
                 </div>
             @else
                 <a href="{{ route('login') }}" style="color:#ccc; text-decoration:none;">Bejelentkezés</a>
+                <a href="{{ route('register') }}" style="color:#ccc; text-decoration:none;">Regisztráció</a>
             @endauth
         </nav>
     </div>
