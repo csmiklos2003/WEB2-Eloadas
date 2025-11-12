@@ -4,7 +4,7 @@
 
         <!-- Logo / App name -->
         <h1 style="margin:0; font-size:1.4em;">
-            <a href="{{ route('dashboard') }}" style="color:#fff; text-decoration:none;">
+            <a href="{{ route('home') }}" style="color:#fff; text-decoration:none;">
                 {{ config('app.name', 'WEB2') }}
             </a>
         </h1>
