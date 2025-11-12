@@ -20,6 +20,10 @@
                class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" 
                style="color:#ccc; text-decoration:none;">Dashboard</a>
 
+            <a href="{{ route('contact.show') }}" 
+               class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">Kapcsolat</a>
+
             <a href="{{ route('adatbazis') }}" 
                class="{{ request()->routeIs('adatbazis.*') ? 'active' : '' }}" 
                style="color:#ccc; text-decoration:none;">Adatbázis</a>
