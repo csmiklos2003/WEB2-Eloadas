@@ -1,125 +1,114 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+<header id="site-header" style="background:#1a1a1a; color:#fff; position:fixed; top:0; left:0; width:100%; z-index:1000;">
+    <div class="container" 
+         style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1em 2em; flex-wrap:wrap;">
+
+        <!-- Logo / App name -->
+        <h1 style="margin:0; font-size:1.4em;">
+            <a href="{{ route('dashboard') }}" style="color:#fff; text-decoration:none;">
+                {{ config('app.name', 'WEB2') }}
+            </a>
+        </h1>
+
+        <!-- Hamburger toggle (mobile) -->
+        <div id="menu-toggle" style="display:none; font-size:1.5em; cursor:pointer;">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <!-- Navigation links -->
+        <nav id="nav-links" style="display:flex; flex-wrap:wrap; gap:1.5em; align-items:center;">
+            <a href="{{ route('dashboard') }}" 
+               class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">Dashboard</a>
+
+            <a href="{{ route('adatbazis') }}" 
+               class="{{ request()->routeIs('adatbazis.*') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">Adatbázis</a>
+
+            <a href="{{ route('crud.index') }}" 
+               class="{{ request()->routeIs('crud.*') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">CRUD menü</a>
+
+            @auth
+                @if(Auth::user()->role === 'admin')
+                    <a href="{{ route('admin') }}" 
+                       class="{{ request()->routeIs('admin') ? 'active' : '' }}" 
+                       style="color:#ccc; text-decoration:none;">Admin menü</a>
+                @endif
+
+                <!-- User dropdown -->
+                <div class="dropdown" style="position:relative;">
+                    <a href="#" id="user-menu" style="color:#fff; text-decoration:none;">
+                        {{ Auth::user()->name }} <i class="fa fa-caret-down"></i>
                     </a>
+                    <ul id="dropdown-menu" 
+                        style="display:none; position:absolute; top:2em; right:0; background:#222; list-style:none; padding:0.5em 0; margin:0; border-radius:0.3em; min-width:160px;">
+                        <li><a href="{{ route('profile.edit') }}" style="display:block; padding:0.5em 1em; color:#ccc; text-decoration:none;">Profil</a></li>
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" 
+                                        style="width:100%; background:none; border:none; color:#ccc; text-align:left; padding:0.5em 1em; cursor:pointer;">
+                                    Kijelentkezés
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-
-                
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-
-                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('adatbazis')" :active="request()->routeIs('adatbazis.*')">
-                        {{ __('Adatbázis') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('crud.index')" :active="request()->routeIs('crud.*')">
-                        {{ __('CRUD menü') }}
-                    </x-nav-link>
-                </div>
-
-                @auth
-    @if(Auth::user()->role === 'admin')
-        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-            <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                {{ __('Admin menü') }}
-            </x-nav-link>
-        </div>
-    @endif
-@endauth
-
-            </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
+            @else
+                <a href="{{ route('login') }}" style="color:#ccc; text-decoration:none;">Bejelentkezés</a>
+            @endauth
+        </nav>
     </div>
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
+    <!-- Inline JS for dropdown + responsive toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            const userMenu = document.getElementById('user-menu');
+            const dropMenu = document.getElementById('dropdown-menu');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
+            // User dropdown toggle
+            if (dropdown && userMenu) {
+                userMenu.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropMenu.style.display = dropMenu.style.display === 'block' ? 'none' : 'block';
+                });
+                document.addEventListener('click', () => dropMenu.style.display = 'none');
+            }
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+            // Mobile nav toggle
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.style.display = (navLinks.style.display === 'flex' || navLinks.style.display === '') 
+                        ? 'none' 
+                        : 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = '#1a1a1a';
+                    navLinks.style.padding = '1em 0';
+                });
+            }
+        });
+    </script>
+</header>
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+<!-- Spacer so content doesn't hide behind fixed header -->
+<div style="height:70px;"></div>
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-    </div>
-</nav>
+<style>
+/* Hover & active effects */
+#header a:hover { color:#fff !important; }
+#header a.active { border-bottom:2px solid #5e42a6; color:#fff !important; }
+/* Dropdown hover */
+#dropdown-menu a:hover, #dropdown-menu button:hover {
+    background:#333; color:#fff !important;
+}
+/* Responsive toggle visible only on small screens */
+@media (max-width:768px){
+    #menu-toggle { display:block; }
+    #nav-links { display:none; width:100%; }
+}
+</style>
