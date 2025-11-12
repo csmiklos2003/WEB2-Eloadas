@@ -53,6 +53,26 @@
                     Szűrjön pilótákra, nagydíjakra vagy csapateredményekre.
                 </p>
             </div>
+
+            <div class="feature" style="background: #fff; padding: 2em; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease;">
+                <span class="icon major" style="background: #f56a6a; color: #fff; width: 70px; height: 70px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1em;">
+                    <i class="fa fa-users"></i>
+                </span>
+                <h3><a href="{{ route('contact.show') }}" style="color: #333; text-decoration: none;">Írjon nekünk</a></h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Lépjen velünk kapcsolatba!
+                </p>
+            </div>
+
+            <div class="feature" style="background: #fff; padding: 2em; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease;">
+                <span class="icon major" style="background: #f56a6a; color: #fff; width: 70px; height: 70px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1em;">
+                    <i class="fa fa-users"></i>
+                </span>
+                <h3><a href="{{ route('dashboard') }}" style="color: #333; text-decoration: none;">Dashboard</a></h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Kezeljen mindent egy helyről!
+                </p>
+            </div>
            
         </div>
     </div>
