@@ -42,9 +42,9 @@
     adott rekord törlése.
     Mintát a dokumentum végén talál.
 
-9.	Admin menu: az Admin oldalhoz. Ezt a menüt csak Admin láthatja.			(2 p)
+9.	Admin menu: az Admin oldalhoz. Ezt a menüt csak Admin láthatja.			(2 p) ✅
 
-10.	Alkalmazását töltse fel és valósítsa meg Internetes tárhelyen.				(2 p)
+10.	Alkalmazását töltse fel és valósítsa meg Internetes tárhelyen.				(2 p) ✅
     (Kötelező elem! A működés ez alapján lesz javítva)	
     Bármelyik tárhelyszolgáltatót használhatja.
 
@@ -61,4 +61,4 @@
     amiben bemutatja alkalmazását és leírja, hogy az előző pontok feladatait hogyan valósította meg. Fontos, hogy ez utóbbit leírja a dokumentációban, mert a     feladat ez alapján lesz javítva. A dokumentációban adja meg a weboldal és a GitHub URL címét is és a belépési adatokat az FTP-hez és az adatbázishoz.
     Fájlnév formátum: Név-NeptunKód.pdf	pl. KovacsFerenc-ABC123.pdf
 
-Eddigi várható pontszám: 16 (21 ha korai beadás)
+Eddigi várható pontszám: 20 (25 ha korai beadás)
