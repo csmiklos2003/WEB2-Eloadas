@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\PilotaController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,5 +26,8 @@ Route::middleware(['auth', 'admin'])->get('/admin', [AdminController::class, 'in
 Route::get('/adatbazis', [AdatbazisController::class, 'index'])->name('adatbazis');
 
 Route::resource('crud', PilotaController::class);
+
+Route::get('/kapcsolat', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';
