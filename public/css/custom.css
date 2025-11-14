@@ -1,0 +1,88 @@
+/* Laravel paginator fix Escape Velocity-hez */
+.pagination {
+    justify-content: center;
+    margin: 2rem 0;
+    font-size: 0.9rem !important;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 .2rem;
+}
+
+.pagination li a,
+.pagination li span {
+    padding: 0.4rem 0.7rem !important;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem !important;
+    line-height: 1 !important;
+}
+
+.pagination li.active span {
+    background: #e44c65 !important; /* téma fő színe */
+    color: #fff !important;
+    border-color: #e44c65 !important;
+}
+
+/* Globális fix Escape Velocity + Laravel paginator nyílkicsinyítés */
+ul.pagination {
+    font-size: 14px !important;
+    line-height: 1 !important;
+}
+
+ul.pagination li {
+    margin: 0 4px !important;
+    padding: 0 !important;
+}
+
+ul.pagination li a,
+ul.pagination li span {
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+    line-height: 1 !important;
+    height: auto !important;
+    min-width: auto !important;
+    display: inline-block !important;
+}
+
+/* Nyilak konkrét méretre kényszerítve */
+ul.pagination li a[rel="prev"],
+ul.pagination li a[rel="next"],
+ul.pagination li span[aria-hidden="true"] {
+    font-size: 16px !important;
+    padding: 6px 10px !important;
+}
+
+/* Paginator SVG eltávolítása Escape Velocity témából */
+.pagination a,
+.pagination span {
+    background-image: none !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+}
+
+.pagination a,
+.pagination span {
+    width: auto !important;
+    height: auto !important;
+    padding: .4rem .7rem !important;
+    display: inline-block !important;
+    font-size: 1rem !important;
+}
+
+/* Fix: Escape Velocity slider arrow bug – remove giant SVG arrow */
+.pagination-wrapper a,
+.pagination-wrapper span {
+    background-image: none !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    width: auto !important;
+    height: auto !important;
+    padding: .4rem .7rem !important;
+    font-size: 1rem !important;
+    display: inline-block !important;
+}
+
+

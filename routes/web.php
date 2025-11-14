@@ -30,4 +30,10 @@ Route::resource('crud', PilotaController::class);
 Route::get('/kapcsolat', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/uzenetek', [App\Http\Controllers\MessageController::class, 'index'])
+         ->name('messages.index');
+});
+
+
 require __DIR__.'/auth.php';

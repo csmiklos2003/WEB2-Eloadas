@@ -32,6 +32,14 @@
                class="{{ request()->routeIs('crud.*') ? 'active' : '' }}" 
                style="color:#ccc; text-decoration:none;">CRUD menü</a>
 
+                
+                @auth                
+                <a href="{{ route('messages.index') }}" 
+               class="{{ request()->routeIs('messages') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">Üzenetek</a>
+               @endauth
+
+
             @auth
                 @if(Auth::user()->role === 'admin')
                     <a href="{{ route('admin') }}" 
@@ -98,6 +106,8 @@
             }
         });
     </script>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
 </header>
 
 <!-- Spacer so content doesn't hide behind fixed header -->

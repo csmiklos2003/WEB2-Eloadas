@@ -77,7 +77,9 @@
         </tbody>
       </table>
     </div>
+    <div class="pagination-wrapper">
     {{ $pilotak->appends(request()->query())->links() }}
+    </div>
 
     {{-- GP-K --}}
     <hr />
@@ -104,7 +106,9 @@
         </tbody>
       </table>
     </div>
+    <div class="pagination-wrapper">
     {{ $gps->appends(request()->query())->links() }}
+    </div>
 
     {{-- EREDMÉNYEK --}}
     <hr />
@@ -141,7 +145,9 @@
         </tbody>
       </table>
     </div>
+    <div class="pagination-wrapper">
     {{ $eredmenyek->appends(request()->query())->links() }}
+    </div>
 
   </div>
 </section>
