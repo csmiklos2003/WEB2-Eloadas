@@ -32,6 +32,11 @@
                         </section>
                     @endif
 
+                   <section class="col-4 col-12-medium" style="flex:1 1 250px;">
+                        <a href="{{ route('diagram') }}" class="button fit primary icon solid fa-edit">CRUD menü</a>
+                        <p>Diagram</p>
+                    </section>
+
                     <!-- Profil -->
                     <section class="col-4 col-12-medium" style="flex:1 1 250px;">
                         <a href="{{ route('profile.edit') }}" class="button fit primary icon solid fa-user">Profilom</a>

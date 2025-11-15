@@ -35,5 +35,11 @@ Route::middleware(['auth'])->group(function () {
          ->name('messages.index');
 });
 
+Route::get('/diagram', [App\Http\Controllers\DiagramController::class, 'index'])
+    ->name('diagram');
+
+
+
+   
 
 require __DIR__.'/auth.php';

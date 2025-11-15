@@ -39,6 +39,10 @@
                style="color:#ccc; text-decoration:none;">Üzenetek</a>
                @endauth
 
+               <a href="{{ route('diagram') }}" 
+               class="{{ request()->routeIs('diagram') ? 'active' : '' }}" 
+               style="color:#ccc; text-decoration:none;">Diagram</a>
+
 
             @auth
                 @if(Auth::user()->role === 'admin')
