@@ -33,8 +33,18 @@
                     @endif
 
                    <section class="col-4 col-12-medium" style="flex:1 1 250px;">
-                        <a href="{{ route('diagram') }}" class="button fit primary icon solid fa-edit">CRUD menü</a>
-                        <p>Diagram</p>
+                        <a href="{{ route('diagram') }}" class="button fit primary icon solid fa-edit">Diagram</a>
+                        <p>A Pilóták nemzetenkénti eloszlása</p>
+                    </section>
+
+                    <section class="col-4 col-12-medium" style="flex:1 1 250px;">
+                        <a href="{{ route('contact.show') }}" class="button fit primary icon solid fa-edit">Kapcsolat</a>
+                        <p>Vegye fel velünk a kapcsolatot!</p>
+                    </section>
+
+                    <section class="col-4 col-12-medium" style="flex:1 1 250px;">
+                        <a href="{{ route('messages.index') }}" class="button fit primary icon solid fa-edit">Üzenetek</a>
+                        <p>Nézze meg az üzeneteket!</p>
                     </section>
 
                     <!-- Profil -->
